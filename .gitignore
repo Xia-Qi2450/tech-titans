@@ -3,6 +3,7 @@
 
 # Python
 __pycache__/
+.venv/
 
 # SQLite database
 instance/
