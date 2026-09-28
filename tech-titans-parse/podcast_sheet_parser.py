@@ -377,8 +377,12 @@ def parse_workbook(path: Path) -> dict[str, list[dict[str, Any]]]:
 
     data: dict[str, list[dict[str, Any]]] = {}
     for sheet_name in wb.sheetnames:
-        LOG.debug("Parsing sheet '%s'", sheet_name)
-        data[sheet_name] = parse_sheet(wb[sheet_name])
+        if sheet_name != "Homepage" and sheet_name != "Announcements":
+            LOG.debug("Parsing sheet '%s'", sheet_name)
+            data[sheet_name] = parse_sheet(wb[sheet_name])
+        else:
+            LOG.debug("Skipping sheet '%s'", sheet_name)
+            continue  # skip the homepage sheet, which is just a cover page
 
     wb.close()
     return data
