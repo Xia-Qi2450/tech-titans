@@ -1,16 +1,16 @@
-# MacOS 
-.DS_Store
+# real data -- member and episode info
+tech-titans-api/instance/
+output/
+*.xlsx
 
-# Python
+# python
 __pycache__/
+*.pyc
+venv/
 .venv/
 
-# SQLite database
-instance/
-
-# Podcast Master Sheet Generated Files
-Tech Titans Podcast Master Sheet.xlsx
-Tech Titans Podcast Master Sheet.json
-Tech Titans Podcast Master Sheet.txt
-
-
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
