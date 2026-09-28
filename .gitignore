@@ -1,0 +1,15 @@
+# MacOS 
+.DS_Store
+
+# Python
+__pycache__/
+
+# SQLite database
+instance/
+
+# Podcast Master Sheet Generated Files
+Tech Titans Podcast Master Sheet.xlsx
+Tech Titans Podcast Master Sheet.json
+Tech Titans Podcast Master Sheet.txt
+
+
