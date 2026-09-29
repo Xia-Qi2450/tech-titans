@@ -14,7 +14,7 @@ var slug = new URLSearchParams(location.search).get('person');
   try {
     var person = await fetchPerson(slug);
     $('#app').innerHTML = vPerson(person);
-    document.title = $('#app h1').textContent + ' — Tech Titans';
+    document.title = $('#app h1').textContent + ' - Tech Titans';
   } catch (err) {
     if (err.status === 404) {
       $('#app').innerHTML = v404();

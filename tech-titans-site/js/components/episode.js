@@ -101,7 +101,7 @@ export function openEp(id) {
       copyText(driveViewUrl(e.drive)).then(function () {
         cb.textContent = 'Copied!';
       }).catch(function () {
-        cb.textContent = "Couldn't copy — copy manually";
+        cb.textContent = "Couldn't copy - copy manually";
       }).then(function () {
         setTimeout(function () { cb.textContent = 'Copy Drive link'; }, 1600);
       });

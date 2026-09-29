@@ -9,18 +9,18 @@ var slug = new URLSearchParams(location.search).get('production');
 
 (async function () {
   if (!slug) {
-    // No project specified — send them to the department page instead of showing an empty template.
+    // No project specified - send them to the department page instead of showing an empty template.
     location.replace('/production/');
     return;
   }
   try {
     var project = await fetchProductionProject(slug);
     $('#app').innerHTML = vProject(project);
-    document.title = $('#app h1').textContent + ' — Tech Titans';
+    document.title = $('#app h1').textContent + ' - Tech Titans';
   } catch (err) {
     if (err.status === 404) {
       $('#app').innerHTML = vProjectNotFound(slug);
-      document.title = 'Project not found — Tech Titans';
+      document.title = 'Project not found - Tech Titans';
     } else {
       $('#app').innerHTML = '<h1>Couldn&rsquo;t load this project</h1><p>' + esc(err.message) + ' &mdash; is the API running?</p>';
     }

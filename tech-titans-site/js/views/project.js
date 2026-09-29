@@ -17,7 +17,7 @@ export function vProject(p) {
   h += '<h2>Episode tracker</h2>' + group('Currently airing', airing) + group('Already aired', aired) + group('In production', production);
 
   if (p.formUrl) {
-    h += '<div class="note"><p>This show runs on student submissions — send us something and we\'ll queue it for an episode.</p></div>' +
+    h += '<div class="note"><p>This show runs on student submissions - send us something and we\'ll queue it for an episode.</p></div>' +
          '<div class="btns"><a class="btn" href="' + esc(p.formUrl) + '" target="_blank" rel="noopener">Submit an idea &rarr;</a></div>';
   }
   return h;

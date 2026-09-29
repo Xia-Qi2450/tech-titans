@@ -3,7 +3,7 @@ import { members } from '../components/members.js';
 import { estimateLine } from '../estimate.js';
 
 var DEPT_NAME = 'Coding Team';
-var DEPT_LEAD = 'We build programs and web pages that benefit teachers and the student body — practical software for the people already in this building.';
+var DEPT_LEAD = 'We build programs and web pages that benefit teachers and the student body - practical software for the people already in this building.';
 
 export function vCoding(projects, people) {
   var ps = projects.filter(function (p) { return p.featured; }).slice(0, 5);

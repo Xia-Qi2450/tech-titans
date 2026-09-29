@@ -14,11 +14,11 @@ var slug = new URLSearchParams(location.search).get('coding');
   try {
     var project = await fetchCodingProject(slug);
     $('#app').innerHTML = vCodingProject(project);
-    document.title = $('#app h1').textContent + ' — Tech Titans';
+    document.title = $('#app h1').textContent + ' - Tech Titans';
   } catch (err) {
     if (err.status === 404) {
       $('#app').innerHTML = vCodingProjectNotFound(slug);
-      document.title = 'Project not found — Tech Titans';
+      document.title = 'Project not found - Tech Titans';
     } else {
       $('#app').innerHTML = '<h1>Couldn&rsquo;t load this project</h1><p>' + esc(err.message) + ' &mdash; is the API running?</p>';
     }

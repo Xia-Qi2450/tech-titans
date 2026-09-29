@@ -9,7 +9,7 @@ export function vCodingProject(p) {
   var h = '<a class="back" href="/coding/">&larr; Coding Team</a><div class="eyebrow">Project</div><h1>' + esc(p.title) + '</h1>';
 
   if (unfinished) {
-    h += '<div class="note bad"><p><b>Still in progress</b> — this project isn&rsquo;t finished yet. Some things may not work as expected.</p></div>';
+    h += '<div class="note bad"><p><b>Still in progress</b> - this project isn&rsquo;t finished yet. Some things may not work as expected.</p></div>';
   }
 
   h += '<span class="tag ' + (unfinished ? 't-warn' : 't-ok') + '">' + (unfinished ? 'In progress' : 'Finished') + '</span>';

@@ -56,11 +56,11 @@ def seed_sample(conn):
     conn.execute(
         "INSERT OR IGNORE INTO people (slug,name,role,dept,is_teacher,bio) VALUES (?,?,?,?,?,?)",
         ("teacher-1", "REPLACE Teacher Name", "Teacher-in-charge", "production", 1,
-         "REPLACE — what this teacher oversees in the department."),
+         "REPLACE - what this teacher oversees in the department."),
     )
     conn.execute(
         "INSERT OR IGNORE INTO people (slug,name,role,dept,is_teacher,bio) VALUES (?,?,?,?,?,?)",
-        ("member-1", "REPLACE Member One", "Host / Producer", "production", 0, "REPLACE — short bio."),
+        ("member-1", "REPLACE Member One", "Host / Producer", "production", 0, "REPLACE - short bio."),
     )
 
     conn.execute(
@@ -79,14 +79,14 @@ def seed_sample(conn):
             priority,idea_approved,finalising_approved,synopsis,drive_id)
            VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""",
         (proj_id, "Honor", "Completed", "Completed", "Completed", "Ready", "Published",
-         "P1", 1, 1, "REPLACE — synopsis for the Honor episode.", "REPLACE_DRIVE_FILE_ID"),
+         "P1", 1, 1, "REPLACE - synopsis for the Honor episode.", "REPLACE_DRIVE_FILE_ID"),
     )
     conn.execute(
         """INSERT OR IGNORE INTO episodes
            (project_id,title,script_status,recording_status,editing_status,ready_status,publish_status,
             priority,idea_approved,estimated_publish_date,estimated_finish_date)
            VALUES (?,?,?,?,?,?,?,?,?,?,?)""",
-        (proj_id, "REPLACE — next value", "Completed", "In Progress", "Not Started", "Not Ready",
+        (proj_id, "REPLACE - next value", "Completed", "In Progress", "Not Started", "Not Ready",
          "Not Published", "P2", 1, "2026-10-15", "2026-10-10"),
     )
     conn.commit()
@@ -96,9 +96,9 @@ def seed_sample(conn):
            (slug,title,status,featured,blurb,description,how_to_use,github_url,website_url,stage,estimated_release)
            VALUES (?,?,?,?,?,?,?,?,?,?,?)""",
         ("replace-project-two", "REPLACE Project Two", "unfinished", 1,
-         "REPLACE — one-line summary for the department index card.",
-         "REPLACE — what this tool or website is meant to do once finished.",
-         "REPLACE — how to use it so far, or what to expect once it's complete.",
+         "REPLACE - one-line summary for the department index card.",
+         "REPLACE - what this tool or website is meant to do once finished.",
+         "REPLACE - how to use it so far, or what to expect once it's complete.",
          "https://github.com/REPLACE_ORG/REPLACE_REPO_2", "https://REPLACE.example.com",
          2, "2026-10-08"),
     )
@@ -178,13 +178,13 @@ def seed_from_podcast_json(conn, path):
     conn.commit()
     print(f"Imported/updated {len(records)} episode row(s) across {len(seen_projects)} project(s).")
     if incomplete_or_flagged:
-        print(f"{incomplete_or_flagged} row(s) were incomplete or had validation warnings in the sheet — "
+        print(f"{incomplete_or_flagged} row(s) were incomplete or had validation warnings in the sheet - "
               f"check the parser's own report for details.")
     if missing_dates:
         print(f"{missing_dates} row(s) had no recognizable Publish/Finish date column "
-              f"(tried {PUBLISH_DATE_KEYS + FINISH_DATE_KEYS}) — "
+              f"(tried {PUBLISH_DATE_KEYS + FINISH_DATE_KEYS}) - "
               f"if your sheet uses different header text, add the real key to this script.")
-    print("member_list was not imported — people stays manual-only, per instruction.")
+    print("member_list was not imported - people stays manual-only, per instruction.")
 
 
 if __name__ == "__main__":

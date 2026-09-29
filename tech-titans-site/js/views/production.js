@@ -5,7 +5,7 @@ import { members } from '../components/members.js';
 // (rarely changes), not operational data the club edits week to week, the
 // same way Home's copy and Printing's stub text are hardcoded.
 var DEPT_NAME = 'Production Team';
-var DEPT_LEAD = 'We make video podcasts and other programmes — discussion-led shows built around the school community, from teacher interviews to student submissions.';
+var DEPT_LEAD = 'We make video podcasts and other programmes - discussion-led shows built around the school community, from teacher interviews to student submissions.';
 
 export function vProduction(projects, people) {
   var ps = projects.filter(function (p) { return p.featured; }).slice(0, 5);
