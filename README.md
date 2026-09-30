@@ -17,7 +17,7 @@ The site only talks to the API. The API gets its data from two places: the sheet
 
 ## Run it
 
-```
+```bash
 python -m venv venv
 venv\Scripts\activate          # mac/linux: source venv/bin/activate
 pip install -r requirements.txt
@@ -25,9 +25,16 @@ pip install -r requirements.txt
 
 Two terminals, both from the repo root:
 
-```
+```bash
 python tech-titans-api/app.py                       # API + admin  -> http://localhost:5000
 cd tech-titans-site && python -m http.server 8080   # site        -> http://localhost:8080
+```
+
+You can also use the included `dev.sh` to do these two at the same time, this is only avaliable for Unix systems:
+
+```bash
+chmod +x dev.sh
+./dev.sh
 ```
 
 - Serve the site from inside its own folder. It uses root-relative paths (`/css/...`), so serving from the repo root breaks it.
@@ -50,7 +57,7 @@ The parser writes a `.json` and a readable `.txt` report into `output/`. Re-run 
 ## Who edits what
 
 | What | Where |
-|---|---|
+| --- | --- |
 | Script / recording / editing / publish status, target dates | The sheet, then re-import |
 | Idea approved, finalising approved, synopsis, Drive file ID | `http://localhost:5000/admin/episodes` |
 | People | `http://localhost:5000/admin/people` |
