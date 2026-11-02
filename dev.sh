@@ -23,7 +23,16 @@ if [ ! -x "$PYTHON" ]; then
     echo
     echo "Create it with:"
     echo "   python -m venv .venv"
-    exit 1
+    echo
+    echo "ignoring to use global environment"
+    PYTHON="/usr/bin/python3"
+    if [ ! -x "$PYTHON" ]; then
+        echo "× Python not found:"
+        echo "  $PYTHON"
+        echo
+        echo "Please install Python to run the app!"
+        exit 1
+    fi
 fi
 
 # Check spreadsheet
